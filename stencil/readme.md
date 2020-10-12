@@ -35,3 +35,4 @@ For the cheap Laser Engraver DXF must be converted to PNG.
 Cutting from paper or foam rubber requires maximum power and contrast.
 
 ![LaserCut](howto-4-laser-engraving-mashine.png)
+![StencilPaper](howto-5-stencil-paper.jpg)
