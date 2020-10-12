@@ -36,3 +36,20 @@ Cutting from paper or foam rubber requires maximum power and contrast.
 
 ![LaserCut](howto-4-laser-engraving-mashine.png)
 ![StencilPaper](howto-5-stencil-paper.jpg)
+
+## Stencil Fonts
+
+![](font-americanstencil.png)
+![](font-billiekid.png)
+![](font-bombora.png)
+![](font-bostontraffic.png)
+![](font-icbmss20.png)
+![](font-karismastencil.png)
+![](font-kenyancoffee.png)
+![](font-marsh.png)
+![](font-pixel7.png)
+![](font-ricklobster.png)
+![](font-sylar.png)
+![](font-tpfu13.png)
+![](font-ussrstencil.png)
+![](font-xtemplate.png)
