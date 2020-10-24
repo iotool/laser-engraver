@@ -4,9 +4,8 @@
 // 2020-10-24 V3 fan position
 
 $bt =   4;  // base dicke
-$bl = 106;  // base laenge
 $bl = 135;  // base laenge
-$bb =  50;  // base breite
+$bb =  55;  // base breite
 $bs = ($bb-30)/2; // base schieben
 $cl =  40;  // corner laenge
 $cb =  12;  // corner breite
@@ -42,7 +41,7 @@ $ao2 = 95; // adapter oben
 $ao3 = 118; // adapter oben
 
 $gap = 0;  // aufmass
-$out = 1;  // 0=3d, 1=2d, 2=debug
+$out = 0;  // 0=3d, 1=2d, 2=debug
 
 if ($out==0) {
  // 3d
@@ -79,7 +78,7 @@ module mFanHolder() {
  difference() {
   translate([0,$bs,0])
    mBase();
-  translate([0,$bs-2,0])
+  translate([0,$bs-4,0])
   union() {
    // fan
    mFan();
@@ -124,9 +123,9 @@ module mFanHolder() {
     mHole(1,$htr,$htg);
   }
   // adapter
-  mCube(0,$al,$ab,-33,$ao1);
-  mCube(0,$al,$ab,-33,$ao2);
-  mCube(0,$al,$ab,-33,$ao3);
+  mCube(0,$al,$ab,-36,$ao1);
+  mCube(0,$al,$ab,-36,$ao2);
+  mCube(0,$al,$ab,-36,$ao3);
  }
 }
 
