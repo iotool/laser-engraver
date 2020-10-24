@@ -1,18 +1,19 @@
 // NejeMaster2 FanHolder
 // 2020-10-24 V1
 // 2020-10-24 V2 bugfix stopper
+// 2020-10-24 V3 fan position
 
 $bt =   4;  // base dicke
 $bl = 106;  // base laenge
 $bl = 135;  // base laenge
-$bb =  58;  // base breite
+$bb =  50;  // base breite
 $bs = ($bb-30)/2; // base schieben
 $cl =  40;  // corner laenge
 $cb =  12;  // corner breite
 $pl =  19;  // plug laenge
 $pb =  14;  // plug breite
 $io =  50;  // inner oberhalb
-$il =  14;  // inner laenge
+$il =  11;  // inner laenge
 $ib =  38;  // inner breite
 $fo =  96;  // fan oberhalb
 $fr =  24;  // fan radius
@@ -41,7 +42,7 @@ $ao2 = 95; // adapter oben
 $ao3 = 118; // adapter oben
 
 $gap = 0;  // aufmass
-$out = 2;  // 0=3d, 1=2d, 2=debug
+$out = 1;  // 0=3d, 1=2d, 2=debug
 
 if ($out==0) {
  // 3d
@@ -78,7 +79,7 @@ module mFanHolder() {
  difference() {
   translate([0,$bs,0])
    mBase();
-  translate([0,$bs,0])
+  translate([0,$bs-2,0])
   union() {
    // fan
    mFan();
@@ -95,10 +96,10 @@ module mFanHolder() {
    }
   }
   mPlug();
-  translate([31,0,0])
-   mHole(1,8.0,50);
+  translate([35,0,0])
+   mHole(1,7.5,50);
   translate([72,0,0])
-   mHole(0,9.0,0);
+   mHole(0,7.5,0);
   mCube(0,$il,$ib,-$ib/2,$io);
   // hole laser
   translate([$hl1,0,0])
@@ -123,9 +124,9 @@ module mFanHolder() {
     mHole(1,$htr,$htg);
   }
   // adapter
-  mCube(0,$al,$ab,-40,$ao1);
-  mCube(0,$al,$ab,-40,$ao2);
-  mCube(0,$al,$ab,-40,$ao3);
+  mCube(0,$al,$ab,-33,$ao1);
+  mCube(0,$al,$ab,-33,$ao2);
+  mCube(0,$al,$ab,-33,$ao3);
  }
 }
 
@@ -167,7 +168,7 @@ module mBase() {
 
 module mDebug() {
  // screws top
- translate([31,0,0])
+ translate([35,0,0])
   union() {
    mHole(0,5.5,50);
    mHole(1,5.5,50);
