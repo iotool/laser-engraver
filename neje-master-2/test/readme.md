@@ -29,3 +29,13 @@
 * bad = PE (Polyethylene) verformte Kanten
 * bad = Polystyrol
 * never = PVC (Polyvinylchlorid) Chlor + Salzsäure
+
+3mm Acrylic (test tbd)
+
+* black: carving time 5mm/s, laser power 100%, 8x loops, z -1.0mm = cut
+* orange: carving time 2mm/s, laser power 100%, 12x loops, z -1.0mm = cut
+* green: carving time 2mm/s, laser power 100%, 16x loops, z -1.0mm = cut
+* blue: carving time 2mm/s, laser power 100%, 16x loops, z -1.0mm = none
+
+
+
