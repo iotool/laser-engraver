@@ -16,6 +16,12 @@ NEJE Wiki power 100% / burning time ...
 
 ![](test-speed-125x125mm.jpg)
 
+My tests for a 500 mm laser cut show a correlation between burning time in mS and total processing time in seconds.
+
+A double burning time in mS does not double the total duration in NEJE software!
+
+Laser cutting of plywood with 25 mS burning time and 6 passes takes 678 seconds in total, but with 50 mS and 3 passes only 438 seconds.
+
 ## Paper 
 
 * carving time 5ms / laser power 80% = cut
