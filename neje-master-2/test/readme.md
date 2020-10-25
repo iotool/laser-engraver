@@ -32,7 +32,7 @@
 
 3mm Acrylic (test tbd)
 
-* black: carving time 2mm/s, laser power 100%, 4x loops, z -1.0mm = cut
+* black: carving time 2mm/s, laser power 100%, 3x loops, z -1.0mm = cut
 * black: carving time 5mm/s, laser power 100%, 8x loops, z -1.0mm = cut
 * orange: carving time 2mm/s, laser power 100%, 12x loops, z -1.0mm = cut
 * green: carving time 2mm/s, laser power 100%, 16x loops, z -1.0mm = cut
