@@ -8,7 +8,7 @@
 
 ![](NejeMaster2-FanHolder.png)
 
-I designed this holder for a fan on the 20 Watt Later NEJE Master 2.
+I designed this holder for a fan on the 20 Watt Laser NEJE Master 2.
 
 Without a fan, the smoke from cutting wood etc. goes directly to the lens and the diode of the laser.
 
