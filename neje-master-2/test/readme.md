@@ -21,7 +21,7 @@
 * carving time 15ms / laser power 100% / 6x loops = partly cut
 * carving time 15ms / laser power 100% / 7x loops = cut
 
-## Plexiglas
+## Acryl / Plexiglas
 
 * good = PMMA (Polymethylmethacrylat)
 * very good = PMMA "XT" (extrudiert)
