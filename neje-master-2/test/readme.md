@@ -5,6 +5,13 @@
 * 338 dpi (133.3 px/cm)
 * reduce smoky smell with coffee powder
 
+NEJE Wiki power 100% / burning time ...
+* 20 ms = leather
+* 30 ms = wood, paper, bambo, 
+* 30 ms = acrylic, bone, paint metal
+* 40 ms = plastic
+* 50 ms = rubber
+
 ## Paper 
 
 * carving time 5ms / laser power 80% = cut
