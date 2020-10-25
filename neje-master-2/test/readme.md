@@ -24,6 +24,8 @@
 ## Plexiglas
 
 * good = PMMA (Polymethylmethacrylat)
+* very good = PMMA "XT" (extrudiert)
+* semi good = PMMA "GS" (gegossen) Toleranze 
 * bad = PE (Polyethylene) verformte Kanten
 * bad = Polystyrol
 * never = PVC (Polyvinylchlorid) Chlor + Salzsäure
