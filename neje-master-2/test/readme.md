@@ -5,13 +5,6 @@
 * 338 dpi (133.3 px/cm)
 * reduce smoky smell with coffee powder
 
-NEJE Wiki power 100% / burning time ...
-* 20 ms = leather
-* 30 ms = wood, paper, bambo, 
-* 30 ms = acrylic, bone, paint metal
-* 40 ms = plastic
-* 50 ms = rubber
-
 ## Speed Test
 
 ![](test-speed-125x125mm.jpg)
@@ -21,6 +14,13 @@ My tests for a 500 mm laser cut show a correlation between burning time in mS an
 A double burning time in mS does not double the total duration in NEJE software!
 
 Laser cutting of plywood with 25 mS burning time and 6 passes takes 678 seconds in total, but with 50 mS and 3 passes only 438 seconds.
+
+NEJE recommendations: power 100% / burning time ...
+* 20 ms = leather
+* 30 ms = wood, bambo
+* 30 ms = acrylic, bone, paint metal
+* 40 ms = plastic
+* 50 ms = rubber
 
 ## Paper 
 
