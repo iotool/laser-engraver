@@ -3,6 +3,7 @@
 ![](NejeMaster2-FanHolder-135x50mm.jpg)
 
 * 135 x 55 x 4 mm Plywood lasercut or 3D printed
+* speed 15ms / power 100% / loops 8x / total 35 minutes
 * [NejeMaster2-FanHolder.stl](NejeMaster2-FanHolder.stl) - 3D model printer
 * [NejeMaster2-FanHolder-135x55mm.nc](NejeMaster2-FanHolder-135x55mm.nc) - 2D model laser cut
 
