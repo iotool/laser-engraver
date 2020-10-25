@@ -12,6 +12,10 @@ NEJE Wiki power 100% / burning time ...
 * 40 ms = plastic
 * 50 ms = rubber
 
+## Speed Test
+
+![](test-speed-125x125mm.jpg)
+
 ## Paper 
 
 * carving time 5ms / laser power 80% = cut
