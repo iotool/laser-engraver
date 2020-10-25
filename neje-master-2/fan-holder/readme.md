@@ -11,3 +11,5 @@
 I designed this holder for a fan on the 20 Watt Later NEJE Master 2.
 
 Without a fan, the smoke from cutting wood etc. goes directly to the lens and the diode of the laser.
+
+There are two versions of this model. The GCode for the CNC mode has holes 0.15mm smaller and the STL for the 3D printer has holes 1.0mm larger to get the real size you want.
