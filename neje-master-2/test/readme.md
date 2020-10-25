@@ -20,3 +20,10 @@
 3.8 mm / 3 layers / strong
 * carving time 15ms / laser power 100% / 6x loops = partly cut
 * carving time 15ms / laser power 100% / 7x loops = cut
+
+## Plexiglas
+
+* good = PMMA (Polymethylmethacrylat)
+* bad = PE (Polyethylene) verformte Kanten
+* bad = Polystyrol
+* never = PVC (Polyvinylchlorid) Chlor + Salzsäure
