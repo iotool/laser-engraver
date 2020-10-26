@@ -29,6 +29,9 @@ NEJE recommendations: power 100% / burning time ...
 * burning time 5ms, power 30% - light
 * burning time 5ms, power 40% - good
 * burning time 5ms, power 50% - dark
+* engraving speed = 97 seconds / cm
+
+Not tested burning time 4ms, power 70%
 
 ## Paper 
 
