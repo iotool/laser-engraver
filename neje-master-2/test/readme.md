@@ -22,6 +22,14 @@ NEJE recommendations: power 100% / burning time ...
 * 40 ms = plastic
 * 50 ms = rubber
 
+## Test engrave playwood
+
+![](test-engeave-playwood-5ms.jpg)
+
+* burning time 5ms, power 30% - light
+* burning time 5ms, power 40% - good
+* burning time 5ms, power 50% - dark
+
 ## Paper 
 
 * carving time 5ms / laser power 80% = cut
@@ -33,6 +41,7 @@ NEJE recommendations: power 100% / burning time ...
 2.8 mm / 3 layers / soft
 * carving time 15ms / laser power 100% / 2x loops = partly cut
 * carving time 15ms / laser power 100% / 3x loops = cut
+* carving time 45ms / laser power 100% / 1x loop = cut
 
 3.8 mm / 3 layers / strong
 * carving time 15ms / laser power 100% / 6x loops = partly cut
