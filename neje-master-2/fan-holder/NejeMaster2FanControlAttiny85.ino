@@ -32,7 +32,7 @@
 
 #define FAN_LIMIT    15     // 0..15
 #define FAN_DEFAULT  8      // 50%
-#define FAN_SCALE    15     // 255/15
+#define FAN_SCALE    17     // 255/15
 #define BUTTON_SHORT 1500   // short push
 #define BUTTON_LONG  6000   // long press
 #define KEY_TAB      0x2B   // Keyboard Tab
