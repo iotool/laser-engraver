@@ -14,6 +14,7 @@
 //                          |
 // (PB0)---[BUTTON]---------+----------(GND)
 // 
+// debug    press durring setup
 // on/off   push button 
 // next     press short > 1500 ms
 // save     press long  > 6000 ms
@@ -43,6 +44,7 @@ static uint8_t  gButtonState = HIGH;
 static uint32_t gButtonTime  = 0;
 static uint16_t gLightSensor  = 0;
 static uint16_t gLightDebug = 4;
+static uint8_t  gKeyboard = LOW;
 
 void fan();
 void light();
@@ -59,17 +61,20 @@ void setup() {
   }  
   fan();
   gLightSensor = analogRead(ADC_LIGHT);
-  DigiKeyboard.sendKeyStroke(0);
-  for (uint8_t i=0; i<10; i++) {
-    digitalWrite(PIN_FAN, HIGH);
-    delay(5);
-    digitalWrite(PIN_FAN, LOW);
-    delay(195);
-  }  
-  DigiKeyboard.println(F("NejeMaster2FanControl"));
-  DigiKeyboard.print(F("FAN"));
-  DigiKeyboard.sendKeyStroke(KEY_TAB,0);
-  DigiKeyboard.println(F("LIGHT"));
+  if (digitalRead(PIN_BUTTON) == LOW) {
+    gKeyboard = HIGH;
+    DigiKeyboard.sendKeyStroke(0);
+    for (uint8_t i=0; i<10; i++) {
+      digitalWrite(PIN_FAN, HIGH);
+      delay(5);
+      digitalWrite(PIN_FAN, LOW);
+      delay(195);
+    }  
+    DigiKeyboard.println(F("NejeMaster2FanControl"));
+    DigiKeyboard.print(F("FAN"));
+    DigiKeyboard.sendKeyStroke(KEY_TAB,0);
+    DigiKeyboard.println(F("LIGHT"));  
+  }
 }
 
 void loop() {
@@ -104,12 +109,14 @@ void light() {
   gLightSensor *= 4;
   gLightSensor += analogRead(ADC_LIGHT);
   gLightSensor /=5;
-  gLightDebug--;
-  if (gLightDebug == 0) {
-    gLightDebug = 4;
-    DigiKeyboard.print((uint16_t) (gFanSpeed * FAN_SCALE));
-    DigiKeyboard.sendKeyStroke(KEY_TAB,0);
-    DigiKeyboard.println(gLightSensor);
+  if (gKeyboard == HIGH) {
+    gLightDebug--;
+    if (gLightDebug == 0) {
+      gLightDebug = 4;
+      DigiKeyboard.print((uint16_t) (gFanSpeed * FAN_SCALE));
+      DigiKeyboard.sendKeyStroke(KEY_TAB,0);
+      DigiKeyboard.println(gLightSensor);
+    }
   }
 }
 
