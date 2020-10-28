@@ -4,7 +4,6 @@
 // 
 // Adjust fan speed by NPN transistor.
 // ATtiny85 Digispark
-// 
 //                          +--N4001-+
 //                          +---FAN----(12V)
 //                          |
@@ -34,6 +33,7 @@
 #define FAN_LIMIT    15     // 0..15
 #define FAN_DEFAULT  8      // 50%
 #define FAN_SCALE    17     // 255/15
+#define FAN_DELAY    7      // 1000/(7*15)=9.5Hz
 #define BUTTON_SHORT 1500   // short push
 #define BUTTON_LONG  6000   // long press
 #define KEY_TAB      0x2B   // Keyboard Tab
@@ -78,7 +78,6 @@ void setup() {
 }
 
 void loop() {
-  delay(125);
   fan();
   light();
   button();
@@ -99,10 +98,16 @@ void fan() {
         digitalWrite(PIN_FAN, HIGH);
         break;
       default:
-        analogWrite(PIN_FAN, gFanSpeed * FAN_SCALE);
+        // analogWrite(PIN_FAN, gFanSpeed * FAN_SCALE);
+        // long impluse pwm
+        digitalWrite(PIN_FAN, HIGH);
+        delay(FAN_DELAY*gFanSpeed);
+        digitalWrite(PIN_FAN, LOW);
+        delay(FAN_DELAY*(FAN_LIMIT-gFanSpeed));
         break;
     }
   }
+  delay(FAN_DELAY);
 }
 
 void light() {
