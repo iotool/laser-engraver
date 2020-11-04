@@ -41,4 +41,9 @@ There are two versions of this model. The GCode for the CNC mode has holes 0.15m
 
 Modified cover for the board of the laser cutter. Microcontroller with push button to control the fan speed and switch on/off.
 
+![](NejeMaster2-FanPower.jpg)
+
+Power supply via 12V connection with additional soldered cable.
+
+
 
