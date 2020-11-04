@@ -45,5 +45,17 @@ Modified cover for the board of the laser cutter. Microcontroller with push butt
 
 Power supply via 12V connection with additional soldered cable.
 
+## Arduino Firmware
+
+Firmware to control the fan speed and switch on/off.
+
+* push button = switch on/off
+* press and hold for 2 seconds = next speed
+* press and hold for 6 seconds = save speed
+
+The fan is controlled with a modified PWM of 16 kHz. With normal PWM of 500 Hz, whistling sounds are produced by the fan. 
+
+The clock of the microcontroller is reduced to 500 kHz to save energy. The quiescent current is 9 mA. At medium speed the consumption is approx. 90 mA with fan switched on.
+
 
 
