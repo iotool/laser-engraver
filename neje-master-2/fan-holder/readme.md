@@ -1,5 +1,14 @@
 # Fan Holder for NEJE Master 2
 
+![](NejeMaster2-Fan.jpg)
+
+* Fan Holder
+* Board Holder
+* ATtiny85 Controller
+* Arduino Firmware
+
+## Fan Holder
+
 ![](NejeMaster2-FanHolder-135x50mm.jpg)
 
 * 135 x 55 x 4 mm Plywood lasercut or 3D printed
