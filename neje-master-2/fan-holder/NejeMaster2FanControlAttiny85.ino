@@ -1,6 +1,6 @@
 // NejeMaster2FanControlAttiny85
 // Arduino IDE 1.6.8, Board: Digispark (Default - 16.5 MHz)
-// 5.048 Bytes (83%) Maximum 6.012 Bytes.
+// 5.084 Bytes (84%) Maximum 6.012 Bytes.
 // 
 // Adjust 12V fan speed by NPN transistor.
 // ATtiny85 Digispark
@@ -27,13 +27,6 @@
 // PWM_FREQ_125HZ + CPU_FREQ_125KHZ = 16 kHz pwm /  9 mA idle (25 mA)
 // PWM_FREQ_32HZ  + CPU_FREQ_250KHZ =  8 kHz pwm / 10 mA idle (28 mA)
 // PWM_FREQ_32HZ  + CPU_FREQ_125KHZ =  4 kHz pwm /  9 mA idle (26 mA)
-// 
-// 0 10.8mA
-// 1 25.4mA   6 67.9mA   11 101.7mA
-// 2 36.4mA   7 75.5mA   12 106.1mA
-// 3 44.9mA   8 81.9mA   13 110.8mA
-// 4 53.4mA   9 89.5mA   14 115.4mA
-// 5 60.2mA  10 95.6mA   15 118.4mA
 
 #include "DigiKeyboard.h"
 #include <avr/eeprom.h>
@@ -80,13 +73,21 @@ void fan();
 void light();
 void button();
 
+void blink() {
+  digitalWrite(PIN_FAN,HIGH);
+  delay(10);
+  digitalWrite(PIN_FAN,LOW);  
+  delay(90);
+}
+
 void setup() {
   pinMode(PIN_BUTTON,INPUT_PULLUP);
   pinMode(PIN_FAN,OUTPUT);
   pinMode(PIN_LIGHT,INPUT);
+  blink();
   EEPROM_DATA_READ;
-  if (gFanState == 255) {
-    gFanState = FAN_DEFAULT;
+  if (gFanSpeed > FAN_LIMIT) {
+    gFanSpeed = FAN_DEFAULT;
     EEPROM_DATA_WRITE;
   }  
   PWM_FREQ;
@@ -102,11 +103,12 @@ void setup() {
       digitalWrite(PIN_FAN, LOW);
       delay(12*gTime16ms);
     }  
-    DigiKeyboard.println(F("NejeMaster2FanControl"));
+    DigiKeyboard.println(F("NejeMaster2FanControl-V4"));
     DigiKeyboard.print(F("FAN"));
     DigiKeyboard.sendKeyStroke(KEY_TAB,0);
     DigiKeyboard.println(F("LIGHT"));  
   }
+  blink();
 }
 
 void loop() {
