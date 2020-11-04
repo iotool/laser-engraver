@@ -25,3 +25,14 @@ Without a fan, the smoke from cutting wood etc. goes directly to the lens and th
 There are two versions of this model. The GCode for the CNC mode has holes 0.15mm smaller and the STL for the 3D printer has holes 1.0mm larger to get the real size you want.
 
 ![](NejeMaster2-FanHolder.jpg)
+
+## Board Holder
+
+![](NejeMaster2-FanBoard-169x59mm.jpg)
+
+* ATtiny85 Digispark
+* Push Button
+* NPN-Transistor 2N2222
+* Resistor 220 Ohm
+* Diode N4001
+* Capacitor 100uF 25V
