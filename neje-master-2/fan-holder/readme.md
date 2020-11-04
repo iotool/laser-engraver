@@ -7,6 +7,14 @@
 * ATtiny85 Controller
 * Arduino Firmware
 
+Without a fan, the smoke from cutting wood etc. goes directly to the lens and the diode of the laser.
+
+This project expands the laser cutter by adding a fan right next to the laser lens to blow rising smoke.
+
+In the simple version the 12V fan is operated with 5V to reduce the speed.
+
+In the extended version, the speed of the fan is controlled by a microcontroller.
+
 ## Fan Holder
 
 ![](NejeMaster2-FanHolder-135x50mm.jpg)
@@ -19,8 +27,6 @@
 ![](NejeMaster2-FanHolder.png)
 
 I designed this holder for a fan on the 20 Watt Laser NEJE Master 2.
-
-Without a fan, the smoke from cutting wood etc. goes directly to the lens and the diode of the laser.
 
 There are two versions of this model. The GCode for the CNC mode has holes 0.15mm smaller and the STL for the 3D printer has holes 1.0mm larger to get the real size you want.
 
@@ -56,6 +62,8 @@ Firmware to control the fan speed and switch on/off.
 The fan is controlled with a modified PWM of 16 kHz. With normal PWM of 500 Hz, whistling sounds are produced by the fan. 
 
 The clock of the microcontroller is reduced to 500 kHz to save energy. The quiescent current is 9 mA. At medium speed the consumption is approx. 90 mA with fan switched on.
+
+You can upload the firmware sketch with Arduino IDE to Digispark board.
 
 
 
