@@ -30,9 +30,15 @@ There are two versions of this model. The GCode for the CNC mode has holes 0.15m
 
 ![](NejeMaster2-FanBoard-169x59mm.jpg)
 
+* 169 x 59 x 2 mm Plywood lasercut or 3D printed
+* speed 50ms / power 100% / loops 2x / total 15 minutes
 * ATtiny85 Digispark
 * Push Button
 * NPN-Transistor 2N2222
 * Resistor 220 Ohm
 * Diode N4001
 * Capacitor 100uF 25V
+
+Modified cover for the board of the laser cutter. Microcontroller with push button to control the fan speed and switch on/off.
+
+
