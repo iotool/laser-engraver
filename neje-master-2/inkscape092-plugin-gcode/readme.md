@@ -16,6 +16,7 @@ Workaround for text:
 * create text object
 * path > object to path
 * object > ungroup
+* optional: path > simplify
 * extension > modify path > flatten bezier (10)
 * extension > lasertools > lasertools (0,2mm)
 
