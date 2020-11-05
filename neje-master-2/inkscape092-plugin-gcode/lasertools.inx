@@ -33,7 +33,7 @@
 			<param name="name" type="description">Prefix G-Code</param>
 			<param name="prefix1" type="string" _gui-text="">G90</param>	
 			<param name="prefix2" type="string" _gui-text="">G21</param>
-			<param name="prefix3" type="string" _gui-text="">M03</param>
+			<param name="prefix3" type="string" _gui-text="">G1 F800.000000</param>
 
 			<param name="name" type="description">Suffix G-Code</param>
 			<param name="suffix1" type="string" _gui-text="">G0 X0.000 Y0.000</param>	
