@@ -28,7 +28,7 @@ You should have received a copy of the GNU General Public Licensey
 along with this program; if not, write to the Free Software
 Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
-Modify for NEJE Master 2 
+Modify for NEJE Master 2 (remove comments, add pastX to G01)
 """
 import gettext
 import numpy as np
@@ -1007,7 +1007,8 @@ class laser_gcode(inkex.Effect):
                         g += "G00 Y" + str(round(pastY-self.options.infill_overshoot, 2)) + "\n"
                         g += "G01 Y" + str(pastY) + "\n"
                     g += tool['gcode before path'] + "\n"
-                    g += "G01 Y" + str(round(si[0][1], 2)) + "\n"
+                    # g += "G01 Y" + str(round(si[0][1], 2)) + "\n"
+                    g += "G01 X"+str(pastX)+" Y" + str(round(si[0][1], 2)) + "\n" # NEJE
                     g += tool['gcode after path'] + "\n"
                     if round(self.options.infill_overshoot, 1) > 0:
                         g += "G01 Y" + str(round(si[0][1]+self.options.infill_overshoot, 2)) + "\n"
@@ -1019,7 +1020,8 @@ class laser_gcode(inkex.Effect):
                         g += "G00 Y" + str(round(pastY+self.options.infill_overshoot, 2)) + "\n"
                         g += "G01 Y" + str(pastY) + "\n"
                     g += tool['gcode before path'] + "\n"
-                    g += "G01 Y" + str(round(si[0][1], 2)) + "\n"
+                    # g += "G01 Y" + str(round(si[0][1], 2)) + "\n"
+                    g += "G01 X"+str(pastX)+" Y" + str(round(si[0][1], 2)) + "\n" # NEJE
                     g += tool['gcode after path'] + "\n"
                     if round(self.options.infill_overshoot, 1) > 0:
                         g += "G01 Y" + str(round(si[0][1]-self.options.infill_overshoot, 2)) + "\n"
@@ -1045,6 +1047,8 @@ class laser_gcode(inkex.Effect):
                     gx = " X"+str(x)  # only include X0.00 coordinates if they are diffrent from past burn
                 if y != pastY:
                     gy = " Y"+str(y)  # only include Y0.00 coordinates if they are diffrent from past burn
+                gx = " X"+str(x)  # NEJE
+                gy = " Y"+str(y)  # NEJE
                 g += "G01" + gx+gy + "\n"
                 # write past used command and coordinates
                 pastX, pastY, lg = round(si[0][0], 2), round(si[0][1], 2), 'G01'
