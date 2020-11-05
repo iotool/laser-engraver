@@ -15,7 +15,8 @@ Workaround for text:
 
 * create text object
 * path > object to path
-* extension > modify path > add nodes
-* extension > lasertools > lasertools
+* object > ungroup
+* extension > modify path > add nodes (10px)
+* extension > lasertools > lasertools (0,2mm)
 
 A good way to test the NC GCode is the CAMotics software.
