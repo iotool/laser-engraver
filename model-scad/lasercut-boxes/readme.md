@@ -32,7 +32,9 @@ mLaserCutPlateJoin(
  )
 ```
 join finger pattern 
-* 0.5 ~ no joins (yellow)
-* -0.5 ~ no joins / no corner (gray)
-* 1..n ~ joins (red)
-* -1..n ~ joins inverse (green)
+* 0.99 ~ no joins (yellow)
+* -0.99 ~ no joins / no corner (gray)
+* 1 .. n ~ outer joins (red)
+* -1 .. n ~ outer joins inverse (green)
+* 0,01 .. 0,98 ~ inner joins (red)
+* -0,01 .. 0,98 ~ inner joins inverse (green)
