@@ -32,13 +32,13 @@ $gDimIY = $gBiH+1+$gBiL;
 echo("Area Inside ",$gDimIX," x ",$gDimIY);
 
 mBoxInside();
-// mBoxOutside();
+mBoxOutside();
 
 module mBoxInside() {
  if ($preview) {
   union() {
    $gCut = 0.0;   // laser cut
-   $gExp = 5.0;   // explore joins
+   $gExp = 10.0;   // explore joins
    // side down
    translate([0,0,-$gExp])
     mLaserCutPlate($gBiW,$gBiL,$gBiT, -$gBiJW,-$gBiJL,-$gBiJW,-$gBiJL, $gCut);
@@ -46,38 +46,61 @@ module mBoxInside() {
    translate([$gExp,0,0])
     translate([$gBiW,0,0])
      rotate([0,-90,0])
-     mLaserCutPlate($gBiH,$gBiL,$gBiT, -$gBiJH,-0.5,$gBiJH,$gBiJL, $gCut);
+     mLaserCutPlate($gBiH,$gBiL,$gBiT, -$gBiJH,-0.99,$gBiJH,$gBiJL, $gCut);
    // side left
    translate([-$gExp,0,0])
     translate([0,0,$gBiH])
      rotate([0,90,0])
-     mLaserCutPlate($gBiH,$gBiL,$gBiT, $gBiJH,$gBiJL,-$gBiJH,-0.5, $gCut);
+     mLaserCutPlate($gBiH,$gBiL,$gBiT, $gBiJH,$gBiJL,-$gBiJH,-0.99, $gCut);
    // side front
    translate([0,-$gExp,0])
     translate([0,0,$gBiH])
      rotate([-90,0,0])
-     mLaserCutPlate($gBiW,$gBiH,$gBiT, -0.5,$gBiJH,$gBiJW,-$gBiJH, $gCut);
+     mLaserCutPlate($gBiW,$gBiH,$gBiT, -0.99,$gBiJH,$gBiJW,-$gBiJH, $gCut);
    // side back
    translate([0,$gExp,0])
     translate([0,$gBiL,0])
      rotate([90,0,0])
-     mLaserCutPlate($gBiW,$gBiH,$gBiT, $gBiJW,-$gBiJH,-0.5,$gBiJH, $gCut);
+     mLaserCutPlate($gBiW,$gBiH,$gBiT, $gBiJW,-$gBiJH,-0.99,$gBiJH, $gCut);
+
+   // inner front
+    translate([0,23,$gBiH])
+     rotate([-90,0,0])
+     mLaserCutPlate($gBiW,$gBiH,$gBiT, 
+     -0.99,0.01,0.01,0.01, $gCut);
+   // inner front base (join div)
+    color("yellow")
+    translate([0,23,-$gExp])
+     mLaserCutPlateJoin($gBiW,$gBiT,0.01,0);
+   // inner front left (join div)
+   translate([-$gExp,23,0])
+    color("yellow")
+    translate([0,0,$gBiH])
+     rotate([0,90,0])
+     mLaserCutPlateJoin($gBiH,$gBiT,0.01,0);
+   // inner front right (join div)
+   translate([$gExp,23,0])
+    color("yellow")
+    translate([$gBiW,0,0])
+     rotate([0,-90,0])
+     mLaserCutPlateJoin($gBiH,$gBiT,0.01,0);
+
   } 
  } else {
   projection()
   union() {
    $gCut = 0.2;   // laser cut
    // side front
-   mLaserCutPlate($gBiW,$gBiH,$gBiT, -0.5,$gBiJH,$gBiJW,-$gBiJH, $gCut);
+   mLaserCutPlate($gBiW,$gBiH,$gBiT, -0.99,$gBiJH,$gBiJW,-$gBiJH, $gCut);
    // side back
    translate([$gBiW+1,0,0])
-    mLaserCutPlate($gBiW,$gBiH,$gBiT, $gBiJW,-$gBiJH,-0.5,$gBiJH, $gCut);
+    mLaserCutPlate($gBiW,$gBiH,$gBiT, $gBiJW,-$gBiJH,-0.99,$gBiJH, $gCut);
    // side right
    translate([0,$gBiH+1,0])
-   mLaserCutPlate($gBiH,$gBiL,$gBiT, -$gBiJH,-0.5,$gBiJH,$gBiJL, $gCut);
+   mLaserCutPlate($gBiH,$gBiL,$gBiT, -$gBiJH,-0.99,$gBiJH,$gBiJL, $gCut);
    // side left
    translate([$gBiH+1,$gBiH+1,0])
-     mLaserCutPlate($gBiH,$gBiL,$gBiT, $gBiJH,$gBiJL,-$gBiJH,-0.5, $gCut);
+     mLaserCutPlate($gBiH,$gBiL,$gBiT, $gBiJH,$gBiJL,-$gBiJH,-0.99, $gCut);
    // side down
    translate([$gBiH+1+$gBiH+1,$gBiH+1,0])
    mLaserCutPlate($gBiW,$gBiL,$gBiT, -$gBiJW,-$gBiJL,-$gBiJW,-$gBiJL, $gCut);
@@ -96,22 +119,22 @@ module mBoxOutside() {
    $gExp = 3.0;   // explore joins
    // side down
    translate([0,0,-$gExp])
-    mLaserCutPlate($gBoW,$gBoL,$gBoT, -0.5,$gBoJL,$gBoJW,-$gBoJL, $gCut);
+    mLaserCutPlate($gBoW,$gBoL,$gBoT, -0.99,$gBoJL,$gBoJW,-$gBoJL, $gCut);
    // side right
    translate([$gExp,0,0])
     translate([$gBoW,0,0])
      rotate([0,-90,0])
-     mLaserCutPlate($gBoH,$gBoL,$gBoT, -0.5,$gBoJL,$gBoJH,-$gBoJL, $gCut);
+     mLaserCutPlate($gBoH,$gBoL,$gBoT, -0.99,$gBoJL,$gBoJH,-$gBoJL, $gCut);
    // side top
    translate([0,0,$gExp])
     translate([$gBoW,0,$gBoH])
      rotate([0,-180,0])
-     mLaserCutPlate($gBoW,$gBoL,$gBoT, -0.5,$gBoJL,$gBoJW,-$gBoJL, $gCut);
+     mLaserCutPlate($gBoW,$gBoL,$gBoT, -0.99,$gBoJL,$gBoJW,-$gBoJL, $gCut);
    // side left
    translate([-$gExp,0,0])
     translate([0,0,$gBoH])
      rotate([0,90,0])
-     mLaserCutPlate($gBoH,$gBoL,$gBoT, -0.5,$gBoJL,$gBoJH,-$gBoJL, $gCut);
+     mLaserCutPlate($gBoH,$gBoL,$gBoT, -0.99,$gBoJL,$gBoJH,-$gBoJL, $gCut);
    // side back
    translate([0,$gExp,0])
     translate([0,$gBoL,0])
@@ -124,16 +147,16 @@ module mBoxOutside() {
   union() {
    $gCut = 0.2;   // laser cut
    // side down
-   mLaserCutPlate($gBoW,$gBoL,$gBoT, -0.5,$gBoJL,$gBoJW,-$gBoJL, $gCut);
+   mLaserCutPlate($gBoW,$gBoL,$gBoT, -0.99,$gBoJL,$gBoJW,-$gBoJL, $gCut);
    // side top
    translate([$gBoW+1,0,0])
-    mLaserCutPlate($gBoW,$gBoL,$gBoT, -0.5,$gBoJL,$gBoJW,-$gBoJL, $gCut);
+    mLaserCutPlate($gBoW,$gBoL,$gBoT, -0.99,$gBoJL,$gBoJW,-$gBoJL, $gCut);
    // side right
    translate([0,$gBoL+1,0])
-    mLaserCutPlate($gBoH,$gBoL,$gBoT, -0.5,$gBoJL,$gBoJH,-$gBoJL, $gCut);
+    mLaserCutPlate($gBoH,$gBoL,$gBoT, -0.99,$gBoJL,$gBoJH,-$gBoJL, $gCut);
    // side left
    translate([$gBoH+1,$gBoL+1,0])
-    mLaserCutPlate($gBoH,$gBoL,$gBoT, -0.5,$gBoJL,$gBoJH,-$gBoJL, $gCut);
+    mLaserCutPlate($gBoH,$gBoL,$gBoT, -0.99,$gBoJL,$gBoJH,-$gBoJL, $gCut);
    // side back
    if ($gBoH > $gBoW) {
     translate([2*($gBoH+1),$gBoL+1,0])
@@ -149,6 +172,7 @@ module mBoxOutside() {
 }
 
 // Util 
+// 2020-10-08 add inner joins (-/+0.01 ~ 1)
 
 module mLaserCutPlate(
   $pLcpW     // wide
@@ -187,7 +211,8 @@ module mLaserCutPlateJoin(
  ,$pLcpjF    // fingers
  ,$pLcpjC    // cut gap
  ) {
- if ($pLcpjF == 0.5) {
+ // no joins [-0.99,+0.99]
+ if ($pLcpjF == 0.99) {
   $mLcpjFW = $pLcpjW-$pLcpjT+$pLcpjC;
   $mLcpjFX = -$pLcpjC/2;
   $mLcpjFY = -$pLcpjC/2;
@@ -195,7 +220,7 @@ module mLaserCutPlateJoin(
   translate([$mLcpjFX,$mLcpjFY,0])
    cube([$mLcpjFW,$pLcpjT,$pLcpjT]);   
  }
- else if ($pLcpjF == -0.5) {
+ else if ($pLcpjF == -0.99) {
   $mLcpjFW = $pLcpjW-2*$pLcpjT+$pLcpjC;
   $mLcpjFX = -$pLcpjC/2+$pLcpjT;
   $mLcpjFY = -$pLcpjC/2;
@@ -203,7 +228,8 @@ module mLaserCutPlateJoin(
   translate([$mLcpjFX,$mLcpjFY,0])
    cube([$mLcpjFW,$pLcpjT,$pLcpjT]);   
  }
- else if ($pLcpjF > 0) {
+ // outer joins [>=-1,>=+1]
+ else if ($pLcpjF >= 1) {
   $mLcpjFW = ($pLcpjW-$pLcpjT+$pLcpjC*$pLcpjF)/(2*$pLcpjF);
   $mLcpjFS = ($pLcpjW-$pLcpjT)/$pLcpjF;
   $mLcpjFX = -$pLcpjC/2;
@@ -214,7 +240,7 @@ module mLaserCutPlateJoin(
     cube([$mLcpjFW,$pLcpjT,$pLcpjT]);   
   }
  }
- else if ($pLcpjF < 0) {
+ else if ($pLcpjF <= -1) {
   $mLcpjFW = ($pLcpjW-$pLcpjT+$pLcpjC*-$pLcpjF)/(2*-$pLcpjF);
   $mLcpjFS = ($pLcpjW-$pLcpjT)/-$pLcpjF;
   $mLcpjFX = -$pLcpjC/2+$pLcpjT;
@@ -222,7 +248,42 @@ module mLaserCutPlateJoin(
   color("green")
   for ($mLcpjFN=[1:-$pLcpjF]) {
    translate([$mLcpjFX+$mLcpjFS*($mLcpjFN-1),$mLcpjFY,0])
-    cube([$mLcpjFW,$pLcpjT,$pLcpjT]);   
+    cube([$mLcpjFW,$pLcpjT,$pLcpjT]);
+  }
+ }
+ // inner joins [<=-0.01,>=+0.01]
+ else if ($pLcpjF > 0) {
+  $mLcpjFF = $pLcpjF*100;
+  $mLcpjFW = ($pLcpjW-$pLcpjT+$pLcpjC*-$pLcpjF)/(2*$mLcpjFF);
+  $mLcpjFS = ($pLcpjW-$pLcpjT)/$mLcpjFF;
+  $mLcpjFX = $mLcpjFW/2+$pLcpjT/2;
+  $mLcpjFY = -$pLcpjC/2;
+  color("red")
+  for ($mLcpjFN=[1:$mLcpjFF]) {
+   translate([$mLcpjFX+$mLcpjFS*($mLcpjFN-1),$mLcpjFY,0])
+    cube([$mLcpjFW,$pLcpjT,$pLcpjT]);
+  }
+ }
+ else if ($pLcpjF < 0) {
+  $mLcpjFF = -$pLcpjF*100;
+  $mLcpjFW = ($pLcpjW-$pLcpjT+$pLcpjC*-$pLcpjF)/(2*$mLcpjFF);
+  $mLcpjFS = ($pLcpjW-$pLcpjT)/$mLcpjFF;
+  $mLcpjFX = $mLcpjFW/2+$pLcpjT/2;
+  $mLcpjFY = -$pLcpjC/2;
+  $mLcpjF1 = $mLcpjFW/2+$pLcpjT/2+$pLcpjC/2;
+  $mLcpjF9 = $mLcpjFW-$mLcpjF1;
+  color("green")
+  union() {
+   translate([0,$mLcpjFY,0])
+   cube([$mLcpjF1,$pLcpjT,$pLcpjT]);
+   translate([$mLcpjFW*($mLcpjFF*2)-$mLcpjF9,$mLcpjFY,0]) 
+   cube([$mLcpjF9,$pLcpjT,$pLcpjT]);
+   if ($mLcpjFF > 1) {
+    for ($mLcpjFN=[1:($mLcpjFF-1)]) {
+     translate([2*$mLcpjFX+$mLcpjFS*($mLcpjFN-1)+($mLcpjFW/2-$pLcpjT/2),$mLcpjFY,0])
+      cube([$mLcpjFW,$pLcpjT,$pLcpjT]);
+    }
+   }
   }
  }
 }
