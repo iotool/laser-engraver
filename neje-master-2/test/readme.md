@@ -39,12 +39,18 @@ Not tested burning time 4ms, power 70%
 * carving time 5ms / laser power 60% = engrave
 * carving time 2ms / laser power 100% = nothing
 
-## Plywood 
+## Poplar Plywood (Pappel)
+
+lightest European hardwood; very soft; low durability
 
 2.8 mm / 3 layers / soft
 * carving time 15ms / laser power 100% / 2x loops = partly cut
 * carving time 15ms / laser power 100% / 3x loops = cut
 * carving time 45ms / laser power 100% / 1x loop = cut
+
+## Gabun Plywood (Gabun-Pappel-Gabun)
+
+African wood Okoumé (also: Gabon); moderately durable
 
 3.8 mm / 3 layers / strong
 * carving time 15ms / laser power 100% / 6x loops = partly cut
@@ -53,6 +59,8 @@ Not tested burning time 4ms, power 70%
 ## Birch Plywood (Birke Sperrholz)
 
 ![](birch-birke-3mm6x-4mm3x.jpg)
+
+Finer grained, heavier and tougher wood, little weatherproof
 
 3.0 mm / 6 layers / super strong (airplane plywood)
 * carving time 100ms / laser power 100% / 38x loops = partly cut
