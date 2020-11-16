@@ -50,7 +50,7 @@ lightest European hardwood; very soft; low durability
 
 Clean cut and low burn marks at 45ms burning time and 2 passes.
 
-## Gabun Plywood (Gabun-Pappel-Gabun)
+## Gabon Plywood (Gabun-Pappel-Gabun)
 
 African wood Okoumé (also: Gabon); moderately durable
 
@@ -60,7 +60,7 @@ African wood Okoumé (also: Gabon); moderately durable
 
 Clean cut and low burn marks at 15ms burning time and 7 passes.
 
-## Birch Plywood (Birke Sperrholz)
+## Birch Plywood (Birke)
 
 ![](birch-birke-3mm6x-4mm3x.jpg)
 
