@@ -48,6 +48,8 @@ lightest European hardwood; very soft; low durability
 * carving time 15ms / laser power 100% / 3x loops = cut
 * carving time 45ms / laser power 100% / 1x loop = cut
 
+Clean cut and low burn marks at 45ms burning time and 2 passes.
+
 ## Gabun Plywood (Gabun-Pappel-Gabun)
 
 African wood Okoumé (also: Gabon); moderately durable
@@ -55,6 +57,8 @@ African wood Okoumé (also: Gabon); moderately durable
 3.8 mm / 3 layers / strong
 * carving time 15ms / laser power 100% / 6x loops = partly cut
 * carving time 15ms / laser power 100% / 7x loops = cut
+
+Clean cut and low burn marks at 15ms burning time and 7 passes.
 
 ## Birch Plywood (Birke Sperrholz)
 
@@ -73,6 +77,8 @@ Finer grained, heavier and tougher wood, little weatherproof
 * carving time 100ms / laser power 100% / 22x loops = cut
 * -2.0 mm inside dimension (+2.2mm oversize)
 * +0.2 mm outside dimension (-0.4mm shriksize)
+
+Unclean cut and burn marks at 100ms burning time and 20/40 passes. Reworking with grinding necessary and very slow.
 
 ## Acryl / Plexiglas
 
