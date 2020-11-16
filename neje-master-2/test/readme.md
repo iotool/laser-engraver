@@ -50,6 +50,22 @@ Not tested burning time 4ms, power 70%
 * carving time 15ms / laser power 100% / 6x loops = partly cut
 * carving time 15ms / laser power 100% / 7x loops = cut
 
+## Birch Plywood (Birke Sperrholz)
+
+![](birch-birke-3mm6x-4mm3x.jpg)
+
+3.0 mm / 6 layers / super strong (airplane plywood)
+* carving time 100ms / laser power 100% / 38x loops = partly cut
+* carving time 100ms / laser power 100% / 40x loops = cut
+* -2.5 mm inside dimension (+2.7mm oversize)
+* +0.7 mm outside dimension (-0.9mm shriksize)
+
+4.0 mm / 3 layers / strong
+* carving time 100ms / laser power 100% / 20x loops = partly cut
+* carving time 100ms / laser power 100% / 22x loops = cut
+* -2.0 mm inside dimension (+2.2mm oversize)
+* +0.2 mm outside dimension (-0.4mm shriksize)
+
 ## Acryl / Plexiglas
 
 * good = PMMA (Polymethylmethacrylat)
@@ -66,6 +82,4 @@ Not tested burning time 4ms, power 70%
 * orange: carving time 2mm/s, laser power 100%, 12x loops, z -1.0mm = cut
 * green: carving time 2mm/s, laser power 100%, 16x loops, z -1.0mm = cut
 * blue: carving time 2mm/s, laser power 100%, 16x loops, z -1.0mm = none
-
-
 
